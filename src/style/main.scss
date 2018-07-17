@@ -4,11 +4,36 @@
     
     justify-items: center;
     align-items: center;
-    grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px , 994px) [card-e]
+    grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px , 994px) [card-e];
 }
 
 .header {
+    margin-top: 150px;
     align-self: center;
+    
+ &_skew {
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
+    -clip-path: polygon(0 0, 100% 0%, 100% 25%, 0 50%);
+    z-index: -10;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 130%;
+    width: 100%;
+    background-color: #444444;
+    }
+    
+    &_border {
+    -webkit-clip-path: polygon(0 48%, 100% 23%, 100% 25%, 0 50%);
+    -clip-path: polygon(0 48%, 100% 23%, 100% 25%, 0 50%);
+    z-index: -10;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 130%;
+    width: 100%;
+    background-color: #00CB79;
+    }
 }
 
 .card {
@@ -35,7 +60,7 @@
 .input {
     display: grid;
     // grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: [number-s]26px [number-e input-s] 1fr [input-e]
+    grid-template-columns: [number-s]26px [number-e input-s] 1fr [input-e];
     
     &_title {
     grid-column: input-s/input-e;
